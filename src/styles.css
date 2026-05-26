@@ -22,6 +22,15 @@
     --accent: oklch(0.96 0.003 325.6);
     --accent-foreground: oklch(0.212 0.019 322.12);
     --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.96 0.003 325.6);
+    --info: oklch(51.528% 0.18412 257.484);
+    --info-foreground: oklch(0.96 0.003 325.6);
+    --success: oklch(74.149% 0.22302 146.463);
+    --success-foreground: oklch(0.212 0.019 322.12);
+    --warning: oklch(72.61% 0.14776 87.187);
+    --warning-foreground: oklch(0.96 0.003 325.6);
+    --invert: var(--color-zinc-900);
+    --invert-foreground: var(--color-zinc-50);
     --border: oklch(0.922 0.005 325.62);
     --input: oklch(0.922 0.005 325.62);
     --ring: oklch(0.711 0.019 323.02);
@@ -42,21 +51,30 @@
 }
 
 .dark {
-    --background: oklch(0.145 0.008 326);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.212 0.019 322.12);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.212 0.019 322.12);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.459 0.187 3.815);
-    --primary-foreground: oklch(0.971 0.014 343.198);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.263 0.024 320.12);
-    --muted-foreground: oklch(0.711 0.019 323.02);
-    --accent: oklch(0.263 0.024 320.12);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
+    --background: oklch(18.21% 0.025 231.04);
+    --foreground: oklch(91.78% 0.00554 184.097);
+    --card: oklch(23.97% 0.032 242.16);
+    --card-foreground: oklch(91.78% 0.00554 184.097);
+    --popover: oklch(32.76% 0.034 242.44);
+    --popover-foreground: oklch(91.78% 0.00554 184.097);
+    --primary: oklch(85.42% 0.005 179.71);
+    --primary-foreground: oklch(18.21% 0.025 231.04);
+    --secondary: oklch(32.76% 0.034 242.44);
+    --secondary-foreground: oklch(91.78% 0.00554 184.097);
+    --muted: oklch(46.51% 0.032 241.77);
+    --muted-foreground: oklch(74.626% 0.01317 216.156);
+    --accent: oklch(23.97% 0.032 242.16);
+    --accent-foreground: oklch(85.42% 0.005 179.71);
+    --destructive: oklch(64.117% 0.23151 26.162);
+    --destructive-foreground: oklch(0.96 0.003 325.6);
+    --info: oklch(51.528% 0.18412 257.484);
+    --info-foreground: oklch(0.96 0.003 325.6);
+    --success: oklch(74.149% 0.22302 146.463);
+    --success-foreground: oklch(0.212 0.019 322.12);
+    --warning: oklch(72.61% 0.14776 87.187);
+    --warning-foreground: oklch(0.96 0.003 325.6);
+    --invert: var(--color-zinc-900);
+    --invert-foreground: var(--color-zinc-50);
     --border: oklch(1 0 0 / 10%);
     --input: oklch(1 0 0 / 15%);
     --ring: oklch(0.542 0.034 322.5);
@@ -95,18 +113,27 @@
     --color-input: var(--input);
     --color-border: var(--border);
     --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
     --color-accent-foreground: var(--accent-foreground);
     --color-accent: var(--accent);
     --color-muted-foreground: var(--muted-foreground);
     --color-muted: var(--muted);
     --color-secondary-foreground: var(--secondary-foreground);
     --color-secondary: var(--secondary);
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
     --color-primary-foreground: var(--primary-foreground);
     --color-primary: var(--primary);
     --color-popover-foreground: var(--popover-foreground);
     --color-popover: var(--popover);
     --color-card-foreground: var(--card-foreground);
     --color-card: var(--card);
+    --color-info-foreground: var(--info-foreground);
+    --color-info: var(--info);
+    --color-warning-foreground: var(--warning-foreground);
+    --color-warning: var(--warning);
+    --color-invert-foreground: var(--invert-foreground);
+    --color-invert: var(--invert);
     --color-foreground: var(--foreground);
     --color-background: var(--background);
     --radius-sm: calc(var(--radius) * 0.6);
@@ -123,12 +150,18 @@
     @apply border-border outline-ring/50;
     }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-linear-to-br from-background via-card to-background/90 w-full min-h-screen text-foreground;
     }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;
     }
   html {
     @apply font-sans;
+    }
+    
+
+    .gradient {
+      background: linear-gradient(to right, #ef629f, #eecda3);
+      color: #111;
     }
 }
